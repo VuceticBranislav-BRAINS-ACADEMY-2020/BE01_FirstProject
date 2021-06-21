@@ -15,7 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyControlers {
 
 	// http://localhost:8090/
-
+	
+	@RequestMapping("/")
+	public String hello() {
+		return "Moja prva aplikacija";
+	}
+	
 	@RequestMapping("/hello")
 	public String returnHello() {
 		return "Hello world!";
@@ -33,7 +38,7 @@ public class MyControlers {
 	@RequestMapping("/date")
 	public LocalDate returnDate() {	    
 		LocalDate date = LocalDate.now();
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		date.format(dtf);
 		return date;
 	}
@@ -90,7 +95,7 @@ public class MyControlers {
 	// putanja /sortarray
 	@RequestMapping("/sortarray")
 	public Integer[] returnSortedArray() {
-		Integer[] array = { 5, 6, 7 };
+		Integer[] array = { 5, 6, 7, 2, 1, 9, 3, 4 };
 		Arrays.sort(array);
 		return array;
 	}
@@ -122,7 +127,7 @@ public class MyControlers {
 			sum = sum + array[i];
 		}
 		System.out.println("LOG: Array calculated");
-		return String.format("Suma: ", sum);
+		return String.format("Suma: %d", sum);
 	}
 	
 	// 3.5 Endpoint koji predstavlja englesko-srpski recnik i koji za rec na srpskom 
