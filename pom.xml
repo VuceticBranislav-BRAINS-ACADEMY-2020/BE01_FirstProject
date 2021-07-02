@@ -13,7 +13,7 @@
 	<artifactId>FirstProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>FirstProject</name>
-	<description>First project as a part of the Spring learning project</description>
+	<description>First project as a part of the Spring learning process</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
